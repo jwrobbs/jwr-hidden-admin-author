@@ -21,10 +21,6 @@ Configuration:
 
 ## Installation
 
-## To Do/Wishlist
-**To Do**
-- Finalize Testing
-- Add instructions
 
 ## Contact
 
