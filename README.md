@@ -3,7 +3,7 @@ Hidden Admin Author does 1 thing: hide admin users. Specifically, it changes the
 
 The intent is to create a honeypot target for bots. If you use an unused account as the author, any login attempt can be treated as hostile.
 
-***Note** This system requires ACF Pro and uses JWR's Control Panel(https://github.com/jwrobbs/jwr-control-panel) as a submodule.*
+***Note** This system requires ACF Pro and uses [JWR's Control Panel](https://github.com/jwrobbs/jwr-control-panel) as a submodule.*
 
 Status: ***Beta***
 
