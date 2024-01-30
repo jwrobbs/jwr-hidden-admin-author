@@ -24,9 +24,9 @@ require_once 'jwr-control-panel/index.php';
  * @return void
  */
 function add_hidden_admin_author_settings() {
-	$options2 = new JWR_Plugin_Options( 'Hidden Admin Author', 'haa', '1.0.1' );
-	$options2->add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
-	$options2->publish();
+	$options = new JWR_Plugin_Options( 'Hidden Admin Author', 'haa', '1.0.1' );
+	$options->add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
+	$options->publish();
 }
 add_action( 'update_jwr_control_panel', __NAMESPACE__ . '\add_hidden_admin_author_settings' );
 
