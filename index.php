@@ -65,3 +65,25 @@ function replace_admin_author( $data, $postarr ) {
 	return $data;
 }
 \add_filter( 'wp_insert_post_data', __NAMESPACE__ . '\replace_admin_author', 10, 2 );
+
+/**
+ * Disable Users portion of the REST API.
+ *
+ * Based on https://wordpress.stackexchange.com/a/254251
+ *
+ * @param array $endpoints The REST API endpoints.
+ *
+ * @return array
+ */
+function disable_users_rest_api( $endpoints ) {
+	if ( isset( $endpoints['/wp/v2/users'] ) ) {
+		unset( $endpoints['/wp/v2/users'] );
+	}
+	if ( isset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] ) ) {
+		unset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+	}
+
+	return $endpoints;
+}
+
+add_filter( 'rest_endpoints', __NAMESPACE__ . '\disable_users_rest_api' );
