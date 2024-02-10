@@ -12,7 +12,7 @@ namespace HiddenAdminAuthor;
 
 use JWR\JWR_Control_Panel\PHP\JWR_Plugin_Options;
 
-defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
+defined( 'ABSPATH' ) || die();
 
 require_once 'jwr-control-panel/index.php';
 
@@ -26,6 +26,7 @@ require_once 'jwr-control-panel/index.php';
 function add_hidden_admin_author_settings() {
 	$options = new JWR_Plugin_Options( 'Hidden Admin Author', 'haa', '1.0.1' );
 	$options->add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
+	$options->add_true_false_field( 'Disable Users REST API', 'disable_users_rest_api', '1', '1' );
 	$options->publish();
 }
 add_action( 'update_jwr_control_panel', __NAMESPACE__ . '\add_hidden_admin_author_settings' );
