@@ -14,8 +14,6 @@ use JWR\JWR_Control_Panel\PHP\JWR_Plugin_Options;
 
 defined( 'ABSPATH' ) || die();
 
-require_once 'jwr-control-panel/index.php';
-
 /**
  * Add settings to the JWR Control Panel.
  *
@@ -24,10 +22,9 @@ require_once 'jwr-control-panel/index.php';
  * @return void
  */
 function add_hidden_admin_author_settings() {
-	$options = new JWR_Plugin_Options( 'Hidden Admin Author', 'haa', '1.0.1' );
-	$options->add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
-	$options->add_true_false_field( 'Disable Users REST API', 'disable_users_rest_api', width: 33 );
-	$options->publish();
+	JWR_Plugin_Options::add_tab( 'Hidden Admin Author', 'haa' );
+	JWR_Plugin_Options::add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
+	JWR_Plugin_Options::add_true_false_field( 'Disable Users REST API', 'disable_users_rest_api', width: 33 );
 }
 add_action( 'update_jwr_control_panel', __NAMESPACE__ . '\add_hidden_admin_author_settings' );
 
