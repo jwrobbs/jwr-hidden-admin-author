@@ -14,6 +14,8 @@ use JWR\JWR_Control_Panel\PHP\JWR_Plugin_Options;
 
 defined( 'ABSPATH' ) || die();
 
+define( 'HAA_PATH', __DIR__ );
+
 /**
  * Add settings to the JWR Control Panel.
  *
@@ -23,10 +25,21 @@ defined( 'ABSPATH' ) || die();
  */
 function add_hidden_admin_author_settings() {
 	JWR_Plugin_Options::add_tab( 'Hidden Admin Author', 'haa' );
-	JWR_Plugin_Options::add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 33 );
-	JWR_Plugin_Options::add_true_false_field( 'Disable Users REST API', 'disable_users_rest_api', width: 33 );
+	JWR_Plugin_Options::add_number_field( 'Substitute Author ID', 'substitute_author_id', '1', '', '1', '1', 25 );
+	JWR_Plugin_Options::add_true_false_field( 'Disable Users REST API', 'disable_users_rest_api', width: 25 );
 }
 add_action( 'update_jwr_control_panel', __NAMESPACE__ . '\add_hidden_admin_author_settings' );
+
+/**
+ * Plugin activation hook.
+ *
+ * @return void
+ */
+function activate() {
+	JWR_Plugin_Options::update_local_json();
+}
+
+add_action( 'activate_' . plugin_basename( __DIR__ . '/index.php' ), __NAMESPACE__ . '\activate' );
 
 /**
  * Save post function to remove admin author.
