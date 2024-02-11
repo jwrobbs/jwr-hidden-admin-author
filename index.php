@@ -77,6 +77,10 @@ function replace_admin_author( $data, $postarr ) {
  * @return array
  */
 function disable_users_rest_api( $endpoints ) {
+	$deactivate = get_field( 'disable_users_rest_api', 'option' );
+	if ( ! $deactivate ) {
+		return $endpoints;
+	}
 	if ( isset( $endpoints['/wp/v2/users'] ) ) {
 		unset( $endpoints['/wp/v2/users'] );
 	}
