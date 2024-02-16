@@ -18,7 +18,8 @@ Configuration:
 
 -   Ensure ACP Pro is installed and activated.
 -   Install and activate Hidden Admin Author.
--   Create your dummy author. Ensure it has a proper display name. Remember the user ID.
+-   Install and activate JWR's Control Panel: [GitHub repo](https://github.com/jwrobbs/jwr-control-panel)
+-   Create your dummy author. Ensure it has a proper display name. Remember its user ID.
 -   Open the control panel (default name: JWR Control Panel).
 -   Go to the _Hiden Admin Author_ tab.
 -   Enter the user ID and click save.

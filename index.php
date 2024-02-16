@@ -1,6 +1,10 @@
 <?php
 /**
  * Plugin Name: Hidden Admin Author
+ * Version: 1.0.0
+ * Author: Josh Robbs
+ * Author URI: https://joshrobbs.com
+ * Plugin URI: https://github.com/jwrobbs/jwr-control-panel
  * Main file for Hidden Admin Author plugin.
  *
  * @author Josh Robbs <josh@joshrobbs.com>
